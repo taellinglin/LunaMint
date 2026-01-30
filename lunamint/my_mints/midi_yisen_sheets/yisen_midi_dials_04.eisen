@@ -1,0 +1,103 @@
+# Yisen MIDI dial sheet 4/5
+size 4096 4096
+background #1f1f1f
+
+# Slmusicbox4
+midi_dial cx_mm=41.08 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/SLMusicBox4.mid" font="Daemon Full Working" font_size_mm=2.52 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 485 874 22 #dddddd Slmusicbox4
+
+# Slmusicboxoptimized
+midi_dial cx_mm=107.24 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/SLMusicBoxOptimized.mid" font="Daemon Full Working" font_size_mm=2.52 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 1267 874 22 #dddddd Slmusicboxoptimized
+
+# Song Of Trees
+midi_dial cx_mm=173.40 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/Song of Trees.mid" font="Daemon Full Working" font_size_mm=2.69 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2048 874 22 #dddddd Song Of Trees
+
+# Song Of Fire
+midi_dial cx_mm=239.56 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/Song_of_Fire.mid" font="Daemon Full Working" font_size_mm=2.66 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2829 874 22 #dddddd Song Of Fire
+
+# Soul Symphony Midi
+midi_dial cx_mm=305.72 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/Soul Symphony_MIDI.mid" font="Daemon Full Working" font_size_mm=2.68 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 3611 874 22 #dddddd Soul Symphony Midi
+
+# Special 2
+midi_dial cx_mm=41.08 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/Special_2.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 485 1656 22 #dddddd Special 2
+
+# Special Midi
+midi_dial cx_mm=107.24 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/Special_MIDI.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 1267 1656 22 #dddddd Special Midi
+
+# Spine Cone 2
+midi_dial cx_mm=173.40 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/Spine Cone_2.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2048 1656 22 #dddddd Spine Cone 2
+
+# Staccato 2
+midi_dial cx_mm=239.56 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/Staccato_2.mid" font="Daemon Full Working" font_size_mm=2.73 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2829 1656 22 #dddddd Staccato 2
+
+# Star Of The Night
+midi_dial cx_mm=305.72 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/Star_of_the_Night.mid" font="Daemon Full Working" font_size_mm=2.67 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 3611 1656 22 #dddddd Star Of The Night
+
+# Tidal[midi]
+midi_dial cx_mm=41.08 cy_mm=173.40 radius_mm=31.08 file="MIDI Collection/Tidal[midi].mid" font="Daemon Full Working" font_size_mm=2.71 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 485 2437 22 #dddddd Tidal[midi]
+
+# Town Theme 3
+midi_dial cx_mm=107.24 cy_mm=173.40 radius_mm=31.08 file="MIDI Collection/Town_Theme_3.mid" font="Daemon Full Working" font_size_mm=2.70 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 1267 2437 22 #dddddd Town Theme 3
+
+# Tranglemidi
+midi_dial cx_mm=173.40 cy_mm=173.40 radius_mm=31.08 file="MIDI Collection/TrangleMidi.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2048 2437 22 #dddddd Tranglemidi
+
+# Tranquil
+midi_dial cx_mm=239.56 cy_mm=173.40 radius_mm=31.08 file="MIDI Collection/Tranquil.mid" font="Daemon Full Working" font_size_mm=2.57 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2829 2437 22 #dddddd Tranquil
+
+# Transienttracker
+midi_dial cx_mm=305.72 cy_mm=173.40 radius_mm=31.08 file="MIDI Collection/TransientTracker.mid" font="Daemon Full Working" font_size_mm=2.69 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 3611 2437 22 #dddddd Transienttracker
+
+# Underneath The Silver Sky
+midi_dial cx_mm=41.08 cy_mm=239.56 radius_mm=31.08 file="MIDI Collection/Underneath_the_Silver_Sky.mid" font="Daemon Full Working" font_size_mm=2.68 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 485 3218 22 #dddddd Underneath The Silver Sky
+
+# Vapor 2
+midi_dial cx_mm=107.24 cy_mm=239.56 radius_mm=31.08 file="MIDI Collection/Vapor_2.mid" font="Daemon Full Working" font_size_mm=2.80 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 1267 3218 22 #dddddd Vapor 2
+
+# Voc1
+midi_dial cx_mm=173.40 cy_mm=239.56 radius_mm=31.08 file="MIDI Collection/VOC1.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2048 3218 22 #dddddd Voc1
+
+# Voc2
+midi_dial cx_mm=239.56 cy_mm=239.56 radius_mm=31.08 file="MIDI Collection/VOC2.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2829 3218 22 #dddddd Voc2
+
+# Vocalmidi
+midi_dial cx_mm=305.72 cy_mm=239.56 radius_mm=31.08 file="MIDI Collection/VocalMIDI.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 3611 3218 22 #dddddd Vocalmidi
+
+# Vocals1
+midi_dial cx_mm=41.08 cy_mm=305.72 radius_mm=31.08 file="MIDI Collection/Vocals1.mid" font="Daemon Full Working" font_size_mm=2.84 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 485 4000 22 #dddddd Vocals1
+
+# Vocals2
+midi_dial cx_mm=107.24 cy_mm=305.72 radius_mm=31.08 file="MIDI Collection/Vocals2.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 1267 4000 22 #dddddd Vocals2
+
+# Vocals3
+midi_dial cx_mm=173.40 cy_mm=305.72 radius_mm=31.08 file="MIDI Collection/Vocals3.mid" font="Daemon Full Working" font_size_mm=2.73 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2048 4000 22 #dddddd Vocals3
+
+# Water Ballad
+midi_dial cx_mm=239.56 cy_mm=305.72 radius_mm=31.08 file="MIDI Collection/Water_Ballad.mid" font="Daemon Full Working" font_size_mm=2.78 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2829 4000 22 #dddddd Water Ballad
+
+# Xingchen
+midi_dial cx_mm=305.72 cy_mm=305.72 radius_mm=31.08 file="MIDI Collection/XingChen.mid" font="Daemon Full Working" font_size_mm=2.76 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 3611 4000 22 #dddddd Xingchen

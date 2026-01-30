@@ -1,0 +1,25 @@
+# Single script for front + back
+use widgets.border_front
+use widgets.border_back
+use filters.vectorize
+
+enable widgets.gpu_ring
+enable widgets.cpu_barcode
+enable widgets.timecode
+enable widgets.qr
+
+# Shared defaults
+set bill.title = "灵国国库"
+set bill.subtitle = "天圆地方"
+set bill.font.size = 18
+set bill.border.width = 6
+set bill.color.primary = "#1A1A1A"
+set bill.color.accent = "#3A7AFE"
+set bill.qr.mode = "sm2"
+set bill.timecode.precision = "ms"
+
+# Front-only overrides
+set front.background.prompt = "J-RPG Mural"
+
+# Back-only overrides
+set back.background.prompt = "Ornamental security pattern"

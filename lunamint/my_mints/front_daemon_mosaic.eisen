@@ -1,0 +1,54 @@
+# Daemon letter-mosaic front banknote (EisenScript)
+front_banknote \
+  seed_text="LunaMint" \
+  denomination="50 卢纳币" \
+  title="灵国国库" \
+  subtitle="天圆地方" \
+  specimen=true \
+  width_mm=160 \
+  height_mm=60 \
+  border_inset_mm=0.5 \
+  border_thickness_mm=3 \
+  enable_qr_border=false \
+  enable_background=true \
+  background_filter="glyph_grid" \
+  background_margin=60 \
+  background_segments=1024 \
+  glyph_font="Daemon Full Working" \
+  glyph_font_dir="./fonts" \
+  glyph_font_size_mm=1.2 \
+  glyph_charset="LUNAMINT" \
+  glyph_invert=false \
+  glyph_snap_grid_px=16 \
+  glyph_opacity=0.9 \
+  glyph_fill_dark="#111111" \
+  glyph_fill_light="#f7f2eb" \
+  glyph_stroke_dark="#0b0b0b" \
+  glyph_stroke_light="#888888" \
+  glyph_stroke_width_mm=0.12 \
+  glyph_inset_scale=0.82 \
+  glyph_outset_scale=1.08 \
+  glyph_threshold=140 \
+  enable_microgrid=false \
+  enable_decorative_border=false \
+  enable_center_seal=false \
+  enable_center_text=false \
+  enable_corner_decorations=false \
+  enable_corner_denoms=false \
+  enable_microprint=false \
+  title_font="Daemon Full Working" \
+  subtitle_font="Daemon Full Working" \
+  corner_font="Daemon Full Working" \
+  seal_chinese_font="Daemon Full Working" \
+  seal_english_font="Daemon Full Working" \
+  qr_url="" \
+  require_signed_qr=false \
+  qr_stamp=false \
+  aztec=false \
+  bg_dir="./backgrounds" \
+  background_prompt="kawaii hand-drawn oekaki style, playful animals and dolls, Studio Ghibli-inspired, whimsical, painterly, soft textures" \
+  input_image_path=""
+
+# Center dial stamps (Daemon font)
+text_dial cx_mm=80 cy_mm=30 radius_mm=22 inner_radius_mm=0.1 text="LUNAMINT • LINGLIN.ART" rings=4 font="Daemon Full Working" font_size_mm=1.0 spacing_mm=0.0 ring_gap_mm=0.4 rotation_seed="2026-01-26" snap_grid_px=0 clip_radius_mm=22 case=upper
+text_dial cx_mm=80 cy_mm=30 radius_mm=14 inner_radius_mm=0.1 text="DAEMON MOSAIC EDITION" rings=3 font="Daemon Full Working" font_size_mm=0.9 spacing_mm=0.0 ring_gap_mm=0.3 rotation_seed="2026-01-26" snap_grid_px=0 clip_radius_mm=14 case=upper

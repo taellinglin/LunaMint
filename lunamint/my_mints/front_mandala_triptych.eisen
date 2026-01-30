@@ -1,0 +1,63 @@
+# Triptych hash-mandala over glyph grid (EisenScript)
+front_banknote \
+  seed_text="LunaMint" \
+  denomination="200 卢纳币" \
+  title="灵国国库" \
+  subtitle="三联星环" \
+  specimen=true \
+  width_mm=160 \
+  height_mm=60 \
+  border_inset_mm=0.5 \
+  border_thickness_mm=3 \
+  enable_qr_border=false \
+  enable_background=true \
+  background_filter="glyph_grid" \
+  background_margin=8 \
+  glyph_font="Daemon Full Working" \
+  glyph_font_dir="./fonts" \
+  glyph_font_size_mm=1 \
+  glyph_charset="qwertyuioplkjhgfdsazxcvbnm" \
+  glyph_invert=false \
+  glyph_snap_grid_px=12 \
+  glyph_opacity=1.0 \
+  glyph_fill_dark="#a10000" \
+  glyph_fill_light="#f7f2eb" \
+  glyph_stroke_dark="#410f19" \
+  glyph_stroke_light="#cacab5" \
+  glyph_stroke_width_mm=0.1 \
+  glyph_inset_scale=0.0 \
+  glyph_outset_scale=1.0 \
+  glyph_threshold=140 \
+  glyph_colorize=true \
+  glyph_cell_padding_mm=-0.0 \
+  enable_microgrid=true \
+  enable_decorative_border=false \
+  enable_center_seal=false \
+  enable_center_text=false \
+  enable_corner_decorations=false \
+  enable_corner_denoms=false \
+  enable_microprint=false \
+  title_font="Daemon Full Working" \
+  subtitle_font="Daemon Full Working" \
+  corner_font="Daemon Full Working" \
+  seal_chinese_font="Daemon Full Working" \
+  seal_english_font="Daemon Full Working" \
+  qr_url="https://linglin.art" \
+  require_signed_qr=true \
+  sm2_private_key="d079e630f3e77b0ce2bde9782d03bd3d9d5fdba63022815b0ba0ebfa889dc73d" \
+  sm2_public_key="041448e2b12c6bee93d757a4526aeaddb0de1848b531d007837d476052723540085eac1213b1d210f72a0a62020cff9eed6f4ea75f1e792a33025942b766d4ea2b" \
+  verify_base_url="https://bank.linglin.art/verify" \
+  issuer_id="lunamint" \
+  validity_days=365 \
+  pow_difficulty=9 \
+  sm4_enable=true \
+  qr_stamp=true \
+  aztec=true \
+  bg_dir="./backgrounds" \
+  background_prompt="Chinese Space Princess in the style of Studio Ghibli" \
+  input_image_path="./portraits/portrait_linglin.png"
+
+# Three equidistant hash mandalas (Daemon font)
+hash_mandala cx_mm=40 cy_mm=30 radius_mm=16 data_path="./portraits/portrait_linglinofficial.png" data_type="png" font="Daemon Full Working" font_size_mm=0.9 charset="qwertyuiopasdfghjklzxcvbnm" rings=7 sectors=14 ring_rows=5 sector_density=2.2 fill_empty=true colorize=true opacity=0.9 stroke_width_mm=0.07 inset_scale=0.82 outset_scale=1.18 snap_grid_px=4 background_color="#101318" background_opacity=0.35 border_color="#0b0b0b" border_width_mm=0.14
+hash_mandala cx_mm=80 cy_mm=30 radius_mm=18 data_path="./portraits/portrait_linglinofficial.png" data_type="png" font="Daemon Full Working" font_size_mm=0.9 charset="qwertyuiopasdfghjklzxcvbnm" rings=8 sectors=16 ring_rows=6 sector_density=2.3 fill_empty=true colorize=true opacity=0.95 stroke_width_mm=0.08 inset_scale=0.82 outset_scale=1.18 snap_grid_px=4 background_color="#101318" background_opacity=0.35 border_color="#0b0b0b" border_width_mm=0.14
+hash_mandala cx_mm=120 cy_mm=30 radius_mm=16 data_path="./portraits/portrait_linglinofficial.png" data_type="png" font="Daemon Full Working" font_size_mm=0.9 charset="qwertyuiopasdfghjklzxcvbnm" rings=7 sectors=14 ring_rows=5 sector_density=2.2 fill_empty=true colorize=true opacity=0.9 stroke_width_mm=0.07 inset_scale=0.82 outset_scale=1.18 snap_grid_px=4 background_color="#101318" background_opacity=0.35 border_color="#0b0b0b" border_width_mm=0.14

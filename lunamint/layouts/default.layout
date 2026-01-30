@@ -1,0 +1,12 @@
+use widgets.border_front
+use widgets.border_back
+use filters.vectorize
+
+set bill.border.width = 6
+set bill.font.size = 18
+set bill.color.primary = "#1A1A1A"
+set bill.color.accent = "#3A7AFE"
+
+enable widgets.gpu_ring
+enable widgets.cpu_barcode
+enable widgets.timecode

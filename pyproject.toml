@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lunamint"
+version = "0.1.3"
+description = "Standalone SVG/PNG banknote generation helpers."
+readme = "README_PYPI.md"
+requires-python = ">=3.9"
+authors = [{ name = "Ling Country Treasury" }]
+license = { file = "LICENSE.md" }
+dependencies = [
+  "cairosvg",
+  "lunalib",
+  "mido",
+  "pillow",
+]
+
+[project.optional-dependencies]
+gradio = ["gradio>=4.0.0"]
+
+[project.urls]
+Homepage = "https://bank.linglin.art"
+Repository = "https://bank.linglin.art"
+
+[tool.setuptools]
+
+[tool.setuptools.packages.find]
+include = ["lunamint", "lunamint.*"]

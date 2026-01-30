@@ -1,0 +1,29 @@
+# Widget showcase on 1920x1080 canvas (EisenScript)
+front_banknote \
+  seed_text="WidgetShowcase" \
+  denomination="1 卢纳币" \
+  title="Widget Showcase" \
+  subtitle="All New Widgets" \
+  specimen=false \
+  width_mm=162.6 \
+  height_mm=91.4 \
+  enable_qr_border=false \
+  enable_background=false \
+  enable_microgrid=false \
+  enable_decorative_border=false \
+  enable_center_seal=false \
+  enable_center_text=false \
+  enable_corner_decorations=false \
+  enable_corner_denoms=false \
+  enable_microprint=false \
+  showcase_widgets=true \
+  showcase_labels=true \
+  label_font="Daemon Full Working" \
+  label_size_mm=3.2 \
+  ascii_stamp_prompt="ceremonial mask, inked linework, high contrast" \
+  qr_url="" \
+  require_signed_qr=false \
+  qr_stamp=false \
+  aztec=false \
+  bg_dir="./backgrounds" \
+  background_prompt=""

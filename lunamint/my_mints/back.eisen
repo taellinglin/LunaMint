@@ -1,0 +1,9 @@
+# Back EisenScript
+size 1600 600
+background #F7F7F9
+rect 20 20 1560 560 #FFFFFF
+text 60 80 32 #111111 "LunaMint Banknote"
+text 60 120 18 #444444 "Back"
+line 60 140 1540 140 #DDDDDD 2
+circle 1400 120 36 #FF7F00
+text 1388 126 12 #FFFFFF "CPU"

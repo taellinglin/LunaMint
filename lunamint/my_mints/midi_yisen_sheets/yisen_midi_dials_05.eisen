@@ -1,0 +1,35 @@
+# Yisen MIDI dial sheet 5/5
+size 4096 4096
+background #1f1f1f
+
+# Yinscradlemidi
+midi_dial cx_mm=41.08 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/YinsCradleMidi.mid" font="Daemon Full Working" font_size_mm=2.72 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 485 874 22 #dddddd Yinscradlemidi
+
+# Zelda
+midi_dial cx_mm=107.24 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/zelda.mid" font="Daemon Full Working" font_size_mm=2.37 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 1267 874 22 #dddddd Zelda
+
+# 勢い ＿midi
+midi_dial cx_mm=173.40 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/勢い_＿MIDI.mid" font="Daemon Full Working" font_size_mm=2.55 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2048 874 22 #dddddd 勢い ＿midi
+
+# 実現 7
+midi_dial cx_mm=239.56 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/実現_7.mid" font="Daemon Full Working" font_size_mm=2.66 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2829 874 22 #dddddd 実現 7
+
+# 未来 Midi
+midi_dial cx_mm=305.72 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/未来_MIDI.mid" font="Daemon Full Working" font_size_mm=2.66 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 3611 874 22 #dddddd 未来 Midi
+
+# 特別 メロディ.midi
+midi_dial cx_mm=41.08 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/特別 メロディ.MIDI.mid" font="Daemon Full Working" font_size_mm=2.76 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 485 1656 22 #dddddd 特別 メロディ.midi
+
+# 特別 メロディ.midi2
+midi_dial cx_mm=107.24 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/特別 メロディ.MIDI2.mid" font="Daemon Full Working" font_size_mm=2.72 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 1267 1656 22 #dddddd 特別 メロディ.midi2
+
+# 飞飞intro
+midi_dial cx_mm=173.40 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/飞飞intro.mid" font="Daemon Full Working" font_size_mm=2.47 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2048 1656 22 #dddddd 飞飞intro

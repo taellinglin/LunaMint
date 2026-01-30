@@ -1,0 +1,103 @@
+# Yisen MIDI dial sheet 2/5
+size 4096 4096
+background #1f1f1f
+
+# Heart So Brave
+midi_dial cx_mm=41.08 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/Heart So Brave.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 485 874 22 #dddddd Heart So Brave
+
+# Heart So Brave
+midi_dial cx_mm=107.24 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/Heart_so_Brave.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 1267 874 22 #dddddd Heart So Brave
+
+# Hikari
+midi_dial cx_mm=173.40 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/Hikari.mid" font="Daemon Full Working" font_size_mm=2.72 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2048 874 22 #dddddd Hikari
+
+# Hikari Vocals
+midi_dial cx_mm=239.56 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/Hikari_Vocals.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2829 874 22 #dddddd Hikari Vocals
+
+# Hikari Vocals2
+midi_dial cx_mm=305.72 cy_mm=41.08 radius_mm=31.08 file="MIDI Collection/Hikari_Vocals2.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 3611 874 22 #dddddd Hikari Vocals2
+
+# Image
+midi_dial cx_mm=41.08 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/image.mid" font="Daemon Full Working" font_size_mm=2.65 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 485 1656 22 #dddddd Image
+
+# Inatrance 2
+midi_dial cx_mm=107.24 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/InATrance_2.mid" font="Daemon Full Working" font_size_mm=2.74 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 1267 1656 22 #dddddd Inatrance 2
+
+# Jitsugen
+midi_dial cx_mm=173.40 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/jitsugen.mid" font="Daemon Full Working" font_size_mm=2.66 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2048 1656 22 #dddddd Jitsugen
+
+# Juno
+midi_dial cx_mm=239.56 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/Juno.mid" font="Daemon Full Working" font_size_mm=2.75 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2829 1656 22 #dddddd Juno
+
+# Lift 2
+midi_dial cx_mm=305.72 cy_mm=107.24 radius_mm=31.08 file="MIDI Collection/Lift_2.mid" font="Daemon Full Working" font_size_mm=2.77 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 3611 1656 22 #dddddd Lift 2
+
+# Lin 2[midi]+12cent
+midi_dial cx_mm=41.08 cy_mm=173.40 radius_mm=31.08 file="MIDI Collection/Lin 2[MIDI]+12cent.mid" font="Daemon Full Working" font_size_mm=2.73 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 485 2437 22 #dddddd Lin 2[midi]+12cent
+
+# Lin 2[midi]
+midi_dial cx_mm=107.24 cy_mm=173.40 radius_mm=31.08 file="MIDI Collection/Lin 2[MIDI].mid" font="Daemon Full Working" font_size_mm=2.73 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 1267 2437 22 #dddddd Lin 2[midi]
+
+# Lin 2 2
+midi_dial cx_mm=173.40 cy_mm=173.40 radius_mm=31.08 file="MIDI Collection/Lin 2_2.mid" font="Daemon Full Working" font_size_mm=2.73 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2048 2437 22 #dddddd Lin 2 2
+
+# Lin 2 Midi
+midi_dial cx_mm=239.56 cy_mm=173.40 radius_mm=31.08 file="MIDI Collection/Lin 2_Midi.mid" font="Daemon Full Working" font_size_mm=2.73 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2829 2437 22 #dddddd Lin 2 Midi
+
+# Lin(totol)
+midi_dial cx_mm=305.72 cy_mm=173.40 radius_mm=31.08 file="MIDI Collection/Lin(Totol).mid" font="Daemon Full Working" font_size_mm=2.57 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 3611 2437 22 #dddddd Lin(totol)
+
+# Lin2vip
+midi_dial cx_mm=41.08 cy_mm=239.56 radius_mm=31.08 file="MIDI Collection/Lin2VIP.mid" font="Daemon Full Working" font_size_mm=2.69 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 485 3218 22 #dddddd Lin2vip
+
+# Lin[midi]
+midi_dial cx_mm=107.24 cy_mm=239.56 radius_mm=31.08 file="MIDI Collection/Lin[MIDI].mid" font="Daemon Full Working" font_size_mm=2.58 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 1267 3218 22 #dddddd Lin[midi]
+
+# Lin Midi
+midi_dial cx_mm=173.40 cy_mm=239.56 radius_mm=31.08 file="MIDI Collection/Lin_Midi.mid" font="Daemon Full Working" font_size_mm=2.72 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2048 3218 22 #dddddd Lin Midi
+
+# Lin Tracker Gba
+midi_dial cx_mm=239.56 cy_mm=239.56 radius_mm=31.08 file="MIDI Collection/Lin_Tracker_GBA.mid" font="Daemon Full Working" font_size_mm=2.58 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2829 3218 22 #dddddd Lin Tracker Gba
+
+# Lingaitune
+midi_dial cx_mm=305.72 cy_mm=239.56 radius_mm=31.08 file="MIDI Collection/LingAITune.mid" font="Daemon Full Working" font_size_mm=2.59 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 3611 3218 22 #dddddd Lingaitune
+
+# Lingaitune16
+midi_dial cx_mm=41.08 cy_mm=305.72 radius_mm=31.08 file="MIDI Collection/LingAITune16.mid" font="Daemon Full Working" font_size_mm=2.65 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 485 4000 22 #dddddd Lingaitune16
+
+# Lingaitune64
+midi_dial cx_mm=107.24 cy_mm=305.72 radius_mm=31.08 file="MIDI Collection/LingAITune64.mid" font="Daemon Full Working" font_size_mm=2.69 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 1267 4000 22 #dddddd Lingaitune64
+
+# Makesannyhappyyay
+midi_dial cx_mm=173.40 cy_mm=305.72 radius_mm=31.08 file="MIDI Collection/MakeSannyHappyYay.mid" font="Daemon Full Working" font_size_mm=2.48 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2048 4000 22 #dddddd Makesannyhappyyay
+
+# Masaki Keyboard Part 3
+midi_dial cx_mm=239.56 cy_mm=305.72 radius_mm=31.08 file="MIDI Collection/Masaki_Keyboard_Part_3.mid" font="Daemon Full Working" font_size_mm=2.69 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 2829 4000 22 #dddddd Masaki Keyboard Part 3
+
+# Masaki Keyboard「backing」
+midi_dial cx_mm=305.72 cy_mm=305.72 radius_mm=31.08 file="MIDI Collection/Masaki_Keyboard「Backing」.mid" font="Daemon Full Working" font_size_mm=2.69 note_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" cc_charset="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" note_opacity=0.95 cc_opacity=0.9 background_color="#000000" background_opacity=0.35 outer_stroke="#111111" outer_stroke_width_mm=0.5 note_stroke="#111111" note_stroke_width_mm=0.12 cc_mark_length_mm=1.0 cc_mark_width_mm=0.08 cc_ring_offset_mm=1.2 inner_radius_ratio=0.12 outer_radius_ratio=0.92 rotation_deg=0
+text 3611 4000 22 #dddddd Masaki Keyboard「backing」

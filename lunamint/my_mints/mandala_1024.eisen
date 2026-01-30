@@ -1,0 +1,6 @@
+# 1024x1024 hash mandala (EisenScript)
+size 1024 1024
+background #303030
+
+# Dense sector-focused mandala
+hash_mandala cx_mm=43.35 cy_mm=43.35 radius_mm=40.5 data="Sanny and Ling Lin" font="Daemon Full Working" font_size_mm=8.4 charset="QWERTYUIOPASDFGHJKLZXCVBNM1234567890" rings=0 sectors=0 ring_rows=1 sector_density=2.0 fill_empty=true colorize=true use_roygbiv=true opacity=1.0 stroke_width_mm=0.12 inset_scale=0.9 outset_scale=1.22 snap_grid_px=0 background_color="#000000" background_opacity=0.5 border_color="#ffffff" border_width_mm=0.12 stroke_only=false stroke_color="#111111" stroke_color_secondary="#111111" flat_glyphs=true glyph_fill="#e6e6e6" glyph_stroke="#111111" glyph_stroke_width_scale=0.7 min_cols_per_sector=1 taper_outer_strength=0.35 taper_radial_strength=0.55 ring_label_every=4 ring_label_alternate=true ring_label_text="123456789" ring_label_size_scale=0.85 sector_padding_deg=0.3 ring_padding_mm=0.05 sector_outline=true sector_outline_color="#111111" sector_outline_width_mm=0.08 ring_pattern_mode=true sm2_row_variance=3 radial_lines=24 tick_major=16 tick_minor=32 core_rings=4 core_radials=24 core_letter_every=2 cardinal_markers=true label_every=4 label_radius_ratio=0.86 label_font_size_mm=1.1 label_stroke_width_mm=0.08 sector_boxes=true sector_box_size_mm=1.4 center_digit=0 center_digit_size_mm=9.0 center_digit_fill_background=false

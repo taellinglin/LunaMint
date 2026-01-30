@@ -1,0 +1,66 @@
+# Full front banknote (EisenScript)
+front_banknote \
+  seed_text="LunaMint" \
+  denomination="100 卢纳币" \
+  title="灵国国库" \
+  subtitle="天圆地方" \
+  specimen=true \
+  width_mm=160 \
+  height_mm=60 \
+  border_inset_mm=0.5 \
+  border_thickness_mm=3 \
+  enable_qr_border=true \
+  enable_background=true \
+  background_margin=60 \
+  background_segments=1024 \
+  enable_microgrid=true \
+  enable_decorative_border=true \
+  enable_center_seal=true \
+  enable_center_text=true \
+  enable_corner_decorations=true \
+  enable_corner_denoms=true \
+  enable_microprint=true \
+  microprint_repetitions=16 \
+  microprint_text="" \
+  center_radius_scale=0.32 \
+  small_radius_scale=0.25 \
+  text_seal_scale=0.65 \
+  secondary_ring_scale=0.88 \
+  center_seal_scale=1.2 \
+    title_font="FengGuangMingRui" \
+    subtitle_font="FengGuangMingRui" \
+    corner_font="Daemon Full Working" \
+    seal_chinese_font="FengGuangMingRui" \
+    seal_english_font="Daemon Full Working" \
+  qr_url="https://linglin.art" \
+  require_signed_qr=true \
+  sm2_private_key="d079e630f3e77b0ce2bde9782d03bd3d9d5fdba63022815b0ba0ebfa889dc73d" \
+  sm2_public_key="041448e2b12c6bee93d757a4526aeaddb0de1848b531d007837d476052723540085eac1213b1d210f72a0a62020cff9eed6f4ea75f1e792a33025942b766d4ea2b" \
+  verify_base_url="https://bank.linglin.art/verify" \
+  issuer_id="lunamint" \
+  validity_days=365 \
+  pow_difficulty=9 \
+  sm4_key="635a68a28f81673b1e0d70e2d2c9975a" \
+  sm4_enable=true \
+  qr_stamp=true \
+  qr_stamp_width=99 \
+  qr_stamp_height=99 \
+  qr_rows=9 \
+  qr_side="both" \
+  aztec=true \
+  aztec_scale=3 \
+  aztec_border=12 \
+  aztec_rotation_base=0 \
+  aztec_offset_x=360 \
+  aztec_offset_y=0 \
+  aztec_border_opacity=0.5 \
+  bg_dir="./backgrounds" \
+  background_prompt="kawaii hand-drawn oekaki style, playful animals and dolls, Studio Ghibli-inspired, whimsical, painterly, soft textures" \
+  input_image_path=""
+
+# Center dial stamp
+text_dial cx_mm=80 cy_mm=30 radius_mm=24 inner_radius_mm=0.1 text="linglin.art, llc" rings=3 font="Daemon Full Working" font_size_mm=1 spacing_mm=0.0 ring_gap_mm=0.0 rotation_seed="2026-01-26" snap_grid_px=0 clip_radius_mm=24 case=lower
+
+# Black/white QR codes
+qr_code x=120 y=260 size=120 data="https://linglin.art" border=2 error=H foreground="#000000" background="#ffffff"
+qr_code x=1650 y=260 size=120 data="https://linglin.art" border=2 error=H foreground="#000000" background="#ffffff"

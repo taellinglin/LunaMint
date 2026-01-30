@@ -1,0 +1,26 @@
+# Letter border mask demo (EisenScript)
+front_banknote \
+  seed_text="LunaMint" \
+  denomination="100 卢纳币" \
+  title="灵国国库" \
+  subtitle="天圆地方" \
+  specimen=true \
+  width_mm=160 \
+  height_mm=60 \
+  enable_background=true \
+  enable_qr_border=false \
+  enable_microgrid=true \
+  enable_decorative_border=false \
+  enable_center_seal=false \
+  enable_center_text=false \
+  enable_corner_decorations=false \
+  enable_corner_denoms=false \
+  enable_microprint=false \
+  bg_dir="./backgrounds" \
+  background_prompt="textile jacquard, ornate pattern, high detail"
+
+# Masked letter border overlay
+letter_border x_mm=2 y_mm=2 width_mm=156 height_mm=56 border_thickness_mm=4 text="linglin.art, llc" font="Daemon Full Working" font_size_mm=1.2 spacing_mm=0.2 case=lower base_fill="" pattern="stripes" pattern_color="#222222" pattern_opacity=0.45 opacity=1.0
+
+# Optional center dial
+text_dial cx_mm=80 cy_mm=30 radius_mm=16 inner_radius_mm=0 text="linglin.art, llc" rings=8 font="Daemon Full Working" font_size_mm=1 spacing_mm=0.1 ring_gap_mm=0.3 rotation_seed="2026-01-26" snap_grid_px=0 clip_radius_mm=16 case=lower

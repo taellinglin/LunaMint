@@ -1,0 +1,10 @@
+# Dial varieties 1024x1024 (EisenScript)
+size 1024 1024
+background #ffffff
+text_dial cx_mm=43 cy_mm=43 radius_mm=26 inner_radius_mm=6 text="linglin.art, llc" rings=12 font="Daemon Full Working" font_size_mm=1 spacing_mm=0.0 ring_gap_mm=0.0 rotation_seed="2026-01-26" snap_grid_px=0 clip_radius_mm=26 case=lower
+text_dial cx_mm=18 cy_mm=18 radius_mm=12 inner_radius_mm=3 text="linglin.art, llc" rings=6 font="Daemon Full Working" font_size_mm=0.9 spacing_mm=0.2 ring_gap_mm=0.4 rotation_seed="2026-01-26-A" snap_grid_px=0 clip_radius_mm=12 case=lower
+text_dial cx_mm=68 cy_mm=18 radius_mm=12 inner_radius_mm=3 text="linglin.art, llc" rings=6 font="Daemon Full Working" font_size_mm=0.9 spacing_mm=0.2 ring_gap_mm=0.4 rotation_seed="2026-01-26-B" snap_grid_px=0 clip_radius_mm=12 case=lower
+text_dial cx_mm=18 cy_mm=68 radius_mm=12 inner_radius_mm=3 text="linglin.art, llc" rings=6 font="Daemon Full Working" font_size_mm=0.9 spacing_mm=0.2 ring_gap_mm=0.4 rotation_seed="2026-01-26-C" snap_grid_px=0 clip_radius_mm=12 case=lower
+text_dial cx_mm=68 cy_mm=68 radius_mm=12 inner_radius_mm=3 text="linglin.art, llc" rings=6 font="Daemon Full Working" font_size_mm=0.9 spacing_mm=0.2 ring_gap_mm=0.4 rotation_seed="2026-01-26-D" snap_grid_px=0 clip_radius_mm=12 case=lower
+text_dial cx_mm=21.5 cy_mm=64.5 radius_mm=16 inner_radius_mm=3 text="linglin.art, llc" rings=9 font="Daemon Full Working" font_size_mm=0.8 spacing_mm=0.3 ring_gap_mm=0.5 rotation_seed="2026-01-26-C" snap_grid_px=0 clip_radius_mm=16 case=lower
+text_dial cx_mm=64.5 cy_mm=64.5 radius_mm=16 inner_radius_mm=6 text="linglin.art, llc" rings=6 font="Daemon Full Working" font_size_mm=1.2 spacing_mm=0.0 ring_gap_mm=0.2 rotation_seed="2026-01-26-D" snap_grid_px=0 clip_radius_mm=16 case=lower

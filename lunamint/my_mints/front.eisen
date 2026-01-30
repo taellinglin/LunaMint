@@ -1,0 +1,2 @@
+# Front EisenScript (full front generator)
+front_banknote seed_text="LunaMint" denomination="100 卢纳币" title="灵国国库" subtitle="天圆地方" specimen=true bg_dir="./backgrounds" background_prompt=""

@@ -1,0 +1,29 @@
+# Text dial showcase (EisenScript)
+front_banknote \
+  seed_text="DialShowcase" \
+  denomination="1 卢纳币" \
+  title="Text Dials" \
+  subtitle="Concentric Rings" \
+  specimen=false \
+  width_mm=160 \
+  height_mm=60 \
+  enable_qr_border=false \
+  enable_background=false \
+  enable_microgrid=false \
+  enable_decorative_border=false \
+  enable_center_seal=false \
+  enable_center_text=false \
+  enable_corner_decorations=false \
+  enable_corner_denoms=false \
+  enable_microprint=false \
+  showcase_widgets=true \
+  showcase_labels=true \
+  label_font="Daemon Full Working" \
+  label_size_mm=3.0 \
+  ascii_stamp_prompt="" \
+  qr_url="" \
+  require_signed_qr=false \
+  qr_stamp=false \
+  aztec=false \
+  bg_dir="./backgrounds" \
+  background_prompt=""

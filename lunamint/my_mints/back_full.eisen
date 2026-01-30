@@ -1,0 +1,28 @@
+# Full back banknote (EisenScript)
+size 1600 600
+background #FFFFFF
+
+back_vectorized_background seed_text="LunaMint" bg_dir="./backgrounds" margin=60 n_segments=1024 background_prompt="RPG Theme" denomination="100 卢纳币"
+
+back_security_background denomination="100" serial_id="SN-0000-0000-0000" margin=60 base_triangle_size=16 hierarchy_levels=2
+
+back_qr_border seed_text="100" serial_id="SN-0000-0000-0000"
+
+back_corner_decorations denomination="100" serial_id="SN-0000-0000-0000" size=100 padding=75 stroke_width=1
+
+back_holographic_seals serial_id="SN-0000-0000-0000" denomination="100" radius=160
+
+back_center_text title="灵国国库" phrase="灵之意志，天下共识" denomination="100"
+
+back_corner_denoms denomination="100"
+
+back_circular_qr data="2" cx=800 cy=300 inner_radius=0 outer_radius=220 segments=4 opacity=0.5 colors="#D80027,#0052B4,#009E60"
+
+chinese_microprint cx=800 cy=300 radius=60 text="壹佰 卢纳币" repetitions=1 font_family="FengGuangMingRui" font_size=8
+
+rainbow_microseal cx=800 cy=300 radius=60 symbol="LKC" repetitions=64 font_family="Daemon Full Working" font_size=8
+
+back_aztec url="https://linglin.art" cx=440 cy=300 scale=3 border=12 rotation=0 border_opacity=0.5 denomination="100"
+back_aztec url="https://linglin.art" cx=1160 cy=300 scale=3 border=12 rotation=180 border_opacity=0.5 denomination="100"
+
+back_verification_text serial_id="SN-0000-0000-0000"
