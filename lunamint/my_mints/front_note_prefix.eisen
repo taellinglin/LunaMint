@@ -1,0 +1,8 @@
+# Prefix overlay for front banknote (LunaMint EisenScript)
+# Jinja2 variables: {{ username }}, {{ serial }}, {{ denomination }}, {{ timestamp }}
+
+sd_background seed_text={{username}} bg_dir="./backgrounds" background_prompt="" filter="vectorize" margin=0 background_segments=1024
+
+daemon_security x_mm=0 y_mm=0 width_mm=160 height_mm=60 text=::{{username}}::{{serial}}::{{timestamp}}:: font="Daemon Full Working" font_size_mm=1.0 spacing_mm=0.1 row_spacing_mm=0.1 letter_scale=0.65 density=2.4 angle_deg=0 opacity=0.35 color_seed="dense" stagger=true hash_algo=sm3
+
+front_qr_border seed_text={{username}} serial_id={{serial}} timestamp_ms={{timestamp}} inset_mm=0.5 border_thickness_mm=3.0

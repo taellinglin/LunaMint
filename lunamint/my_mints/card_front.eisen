@@ -1,0 +1,40 @@
+# Credit card front
+size 1000 630
+background none
+
+# SD background (vectorized)
+sd_background seed_text="LUNAMINT" bg_dir="./backgrounds" background_prompt="sleek fintech gradient, subtle geometric lines, dark navy" filter=vectorize margin=8 background_segments=240
+
+# Base card (semi-transparent)
+rect 40 40 920 550 #111826cc
+rect 60 60 880 510 #0f1624cc
+
+# Accent stripes (soft)
+polygon points="60,120 360,60 420,60 120,120" fill="#1f2a4499"
+polygon points="60,160 520,60 580,60 120,160" fill="#15223888"
+polygon points="60,200 680,60 740,60 120,200" fill="#101a2c77"
+
+# Chip
+rect 90 240 220 150 #d7b35a
+rect 105 255 190 120 #caa24a
+line 105 305 295 305 #7f6328 2
+line 105 345 295 345 #7f6328 2
+line 160 255 160 375 #7f6328 2
+line 240 255 240 375 #7f6328 2
+
+# Card number band
+rect 60 430 880 70 #0c1322dd
+text 90 480 28 #e8e1cf "4762 9988 1122 9046"
+
+# Name + expiry
+text 90 525 18 #c9d4ff "LING LIN"
+text 760 525 18 #c9d4ff "12/29"
+
+# Microtext band
+letter_border x_mm=6 y_mm=10 width_mm=73 height_mm=10 border_thickness_mm=2 text="LUNAMINT" font="Daemon Full Working" font_size_mm=0.9 layout=packed pattern=solid fill_color="#1e2a46" opacity=0.75 packed_spacing_x_mm=0 packed_spacing_y_mm=0 packed_glyph_scale=0.9
+
+# Pixel art (brand mark)
+pixel_art x_mm=70 y_mm=18 image="icons/princess2.png" pixel_size_mm=0.18 alpha_threshold=0.05 compress=true
+
+# Midi dial (small, faster)
+midi_dial cx_mm=62 cy_mm=28 radius_mm=7 file="MIDI Collection/Sax.mid" font="Daemon Full Working" font_size_mm=0.7 note_charset="LUNAMINT" cc_charset="123456" note_opacity=0.4 cc_opacity=0.2 background_color="#111111" background_opacity=0.6 outer_stroke="#111111" outer_stroke_width_mm=0.2 note_stroke="#FFFFFF" note_stroke_width_mm=0.12 cc_mark_length_mm=0.8 cc_mark_width_mm=0.1 cc_ring_offset_mm=0.6 inner_radius_ratio=0.2 outer_radius_ratio=0.9 rotation_deg=0

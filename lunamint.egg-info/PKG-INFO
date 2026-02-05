@@ -11,6 +11,7 @@ Requires-Dist: cairosvg
 Requires-Dist: lunalib
 Requires-Dist: mido
 Requires-Dist: pillow
+Requires-Dist: shapely
 Provides-Extra: gradio
 Requires-Dist: gradio>=4.0.0; extra == "gradio"
 

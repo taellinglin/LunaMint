@@ -2,6 +2,7 @@ cairosvg
 lunalib
 mido
 pillow
+shapely
 
 [gradio]
 gradio>=4.0.0

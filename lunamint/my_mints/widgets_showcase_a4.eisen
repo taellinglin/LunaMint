@@ -1,0 +1,42 @@
+# A4 widgets showcase (no labels, minimal, aligned)
+size 2480 3508
+background #ffffff
+
+# Basic primitives (top-left)
+rect 120 120 200 120 #f0f0f0
+circle 360 180 40 #d8d8d8
+
+pix 450 120 #111111
+polygon points="520,120 640,140 620,220 540,210" fill="#e0e0e0" stroke="#111111" stroke_width=2
+line 120 260 700 260 #111111 2
+
+# Boolean group
+group union
+  circle 180 340 35 #99999980
+  circle 220 340 35 #99999980
+endgroup
+
+# QR code
+qr_code x=120 y=300 size=140 data="LUNAMINT" border=2 error=Q foreground="#111111" background="#ffffff" invert=false
+
+# Pixel art
+pixel_art x_mm=15 y_mm=35 image="./portraits/portrait_Ling_Treasury.png" pixel_size_mm=0.6 compress=true
+
+# Text widgets (row 1)
+text_dial cx_mm=35 cy_mm=90 radius_mm=12 text="LUNAMINT" rings=4 font=Daemon Full Working font_size_mm=1.0 spacing_mm=0.1 ring_gap_mm=0.25 rotation_seed="a4" snap_grid_px=0 case=upper
+text_grid x_mm=60 y_mm=78 width_mm=40 height_mm=24 text="LUNAMINT" font=Daemon Full Working font_size_mm=1.0 spacing_mm=0.1 snap_grid_px=0
+
+# Letter border (packed)
+letter_border x_mm=15 y_mm=110 width_mm=60 height_mm=22 border_thickness_mm=3 text="LUNAMINT" font=Daemon Full Working font_size_mm=1 layout=packed pattern=solid fill_color="#111111" opacity=1.0 packed_spacing_x_mm=0 packed_spacing_y_mm=0 packed_glyph_scale=0.9
+
+# Hash mandalas
+hash_mandala cx_mm=115 cy_mm=90 radius_mm=12 data="LUNAMINT" font=Daemon Full Working font_size_mm=1.0 charset="LUNAMINT" rings=5 sectors=10 opacity=0.85 stroke_width_mm=0.1 colorize=false
+hash_mandala_rect x_mm=95 y_mm=110 width_mm=40 height_mm=22 data="LUNAMINT" font=Daemon Full Working font_size_mm=0.9 charset="LUNAMINT" rings=4 sectors=8 opacity=0.85
+
+# MIDI dial
+midi_dial cx_mm=165 cy_mm=90 radius_mm=12 file=MIDI Collection/CLI.mid font=Daemon Full Working font_size_mm=1.0 note_charset="LUNAMINT" cc_charset="LUNAMINT" rotation_deg=0
+
+# Microprint seals (lower-left)
+chinese_microprint cx=900 cy=560 radius=55 text="LUNAMINT" repetitions=60 font_family=Daemon Full Working font_size=7
+rainbow_microseal cx=1080 cy=560 radius=55 symbol="L" repetitions=60 font_family=Daemon Full Working font_size=7
+

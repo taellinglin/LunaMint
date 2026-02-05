@@ -15,6 +15,7 @@ dependencies = [
   "lunalib",
   "mido",
   "pillow",
+  "shapely",
 ]
 
 [project.optional-dependencies]

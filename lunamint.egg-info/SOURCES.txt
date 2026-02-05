@@ -42,6 +42,7 @@ lunamint/widgets/border_front.py
 lunamint/widgets/border_patterns.py
 lunamint/widgets/config.py
 lunamint/widgets/crypto.py
+lunamint/widgets/daemon_security.py
 lunamint/widgets/fractal_stamp.py
 lunamint/widgets/glyph_grid.py
 lunamint/widgets/godseye.py
@@ -53,6 +54,7 @@ lunamint/widgets/letter_mosaic.py
 lunamint/widgets/measure.py
 lunamint/widgets/microtext.py
 lunamint/widgets/midi_dial.py
+lunamint/widgets/pixel_art.py
 lunamint/widgets/rosette.py
 lunamint/widgets/security_thread.py
 lunamint/widgets/serial_panel.py

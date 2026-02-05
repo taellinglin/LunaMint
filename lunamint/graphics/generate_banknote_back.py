@@ -36,6 +36,7 @@ try:
         denomination_to_color,
         safe_make_matrix,
     )
+    from ..widgets.daemon_security import add_daemon_security_pattern_px
 except ImportError:
     import sys
     from pathlib import Path
@@ -50,6 +51,7 @@ except ImportError:
         denomination_to_color,
         safe_make_matrix,
     )
+    from lunamint.widgets.daemon_security import add_daemon_security_pattern_px
 
 # At the top of your module
 bg_image = None  # initially empty
@@ -132,7 +134,14 @@ def embed_font(dwg, font_path: str, font_name: str):
 # ----------------------
 # Artwork elements
 # ----------------------
-def add_corner_denoms(dwg, W: int, H: int, denom_str: str):
+def add_corner_denoms(
+    dwg,
+    W: int,
+    H: int,
+    denom_str: str,
+    big_scale: float = 1.0,
+    small_scale: float = 1.0,
+):
     """
     Draws denomination numbers in all four corners with white outline 0.05cm behind
     fill and fill opacity 0.9. Bottom ones remain aligned as before.
@@ -147,9 +156,12 @@ def add_corner_denoms(dwg, W: int, H: int, denom_str: str):
     first_digit = denom_formatted[0]
     rest_digits = denom_formatted[1:]
 
+    big_scale = max(0.1, float(big_scale))
+    small_scale = max(0.1, float(small_scale))
+
     # Sizes
-    BIG_FONT = 128
-    SMALL_FONT = 72
+    BIG_FONT = int(round(128 * big_scale))
+    SMALL_FONT = int(round(72 * small_scale))
 
     # Padding
     PADDING = int(0.5 * 30 * 3.78)
@@ -162,6 +174,9 @@ def add_corner_denoms(dwg, W: int, H: int, denom_str: str):
 
     # Helper to add text with stroke behind
     def add_text_with_outline(x, y, text, font_size, color, anchor, baseline):
+        if baseline == "top":
+            y = y + font_size * 0.75
+        alignment = "alphabetic"
         # Stroke first
         dwg.add(dwg.text(
             text,
@@ -172,7 +187,8 @@ def add_corner_denoms(dwg, W: int, H: int, denom_str: str):
             stroke="#FFF",
             stroke_width=STROKE_WIDTH,
             text_anchor=anchor,
-            alignment_baseline=baseline,
+            alignment_baseline=alignment,
+            dominant_baseline=alignment,
             opacity=0.9
         ))
         # Fill on top
@@ -184,19 +200,20 @@ def add_corner_denoms(dwg, W: int, H: int, denom_str: str):
             fill=color,
             stroke="none",
             text_anchor=anchor,
-            alignment_baseline=baseline,
+            alignment_baseline=alignment,
+            dominant_baseline=alignment,
             opacity=0.9
         ))
 
     # --- Top-left ---
-    add_text_with_outline(PADDING, PADDING, first_digit, BIG_FONT, COLORS[0], "start", "hanging")
+    add_text_with_outline(PADDING, PADDING, first_digit, BIG_FONT, COLORS[0], "start", "top")
     offset_x = PADDING + BIG_FONT * 0.6
-    add_text_with_outline(offset_x, PADDING, rest_digits, SMALL_FONT, COLORS[0], "start", "hanging")
+    add_text_with_outline(offset_x, PADDING, rest_digits, SMALL_FONT, COLORS[0], "start", "top")
 
     # --- Top-right ---
-    add_text_with_outline(W - PADDING, PADDING, rest_digits, SMALL_FONT, COLORS[1], "end", "hanging")
+    add_text_with_outline(W - PADDING, PADDING, rest_digits, SMALL_FONT, COLORS[1], "end", "top")
     offset_x = W - PADDING - SMALL_FONT * len(rest_digits) * 0.55
-    add_text_with_outline(offset_x, PADDING, first_digit, BIG_FONT, COLORS[1], "end", "hanging")
+    add_text_with_outline(offset_x, PADDING, first_digit, BIG_FONT, COLORS[1], "end", "top")
 
     # --- Bottom-left ---
     add_text_with_outline(PADDING, H - PADDING, first_digit, BIG_FONT, COLORS[2], "start", "baseline")
@@ -918,53 +935,25 @@ def add_subtle_frame_and_microgrid(dwg, W: int, H: int, border_info: dict, denom
         dwg.add(dwg.rect(**rect_params))
 
 
-    # --- Deterministic microdots based on inputs ---
-    base_cell = 3
-    cols = math.ceil(diamond_width / base_cell)
-    rows = math.ceil(diamond_height / base_cell)
-
-    g = dwg.g(opacity=0.25)
-    for r in range(rows):
-        for c in range(cols):
-            # Deterministic decision to draw dot
-            dot_value = (denom_seed * r * 17 + time_seed * c * 23 + hash_seed * 29) % 100
-            if dot_value < 40:  # 40% density
-                x = diamond_start_x + c * base_cell
-                y = diamond_start_y + r * base_cell
-                
-                # Deterministic color from inputs
-                color_hue = (denom_seed * c * 41 + time_seed * r * 31 + hash_seed * 19) % 360
-                color = hsl_to_rgb_string(color_hue, 85, 55)
-
-                
-                # Deterministic size and position
-                size_seed = (denom_seed * r * 7 + time_seed * c * 11) % 100
-                radius = 0.5 + (size_seed / 100) * 1.0
-                
-                pos_seed = (denom_seed * c * 13 + time_seed * r * 17) % 100
-                jitter_x = ((pos_seed / 100) * 2.4) - 1.2
-                jitter_y = (((pos_seed * 7) % 100 / 100) * 2.4) - 1.2
-                
-                opacity_seed = (denom_seed * r * 3 + time_seed * c * 5) % 100
-                opacity = 0.1 + (opacity_seed / 100) * 0.7
-                
-                g.add(dwg.circle(
-                    center=(x + base_cell/2 + jitter_x, y + base_cell/2 + jitter_y),
-                    r=radius,
-                    fill=color,
-                    opacity=opacity
-                ))
-    dwg.add(g)
-
-    # --- Mirror layer (deterministic opacity) ---
-    mirror_opacity = 0.04 + ((denom_seed + time_seed) % 100) * 0.0004
-    mirror = dwg.g(
-        transform=f"translate({diamond_start_x + diamond_width/2},0) scale(-1,1) translate({-diamond_start_x - diamond_width/2},0)", 
-        opacity=mirror_opacity
+    # --- Daemon security pattern (replaces microdots) ---
+    text_seed = f"{denomination}-{timestamp_ms}"
+    size_base = max(4.0, min(diamond_width, diamond_height) * 0.02)
+    add_daemon_security_pattern_px(
+        dwg,
+        x_px=diamond_start_x + pad,
+        y_px=diamond_start_y + pad,
+        width_px=max(1.0, diamond_width - 2 * pad),
+        height_px=max(1.0, diamond_height - 2 * pad),
+        text=text_seed,
+        font_name="Daemon Full Working",
+        font_size_px=size_base,
+        spacing_px=size_base * 0.4,
+        row_spacing_px=size_base * 0.35,
+        angle_deg=0.0,
+        opacity=0.22,
+        color_seed=text_seed,
+        stagger=True,
     )
-    for elem in g.elements:
-        mirror.add(elem.copy())
-    dwg.add(mirror)
 
 def add_circular_qr_continuous(dwg, cx, cy, text, inner_radius=0, outer_radius=256,
                                segments=360, colors=None, opacity=0.75):
@@ -1085,6 +1074,9 @@ def add_center_text(dwg, W: int, H: int, title: str, phrase: str, denom_color: s
 
     # Helper to add text with outline
     def add_text_with_outline(x, y, text, font_size, fill_color, stroke_color, baseline, denom_color):
+        if baseline == "top":
+            y = y + font_size * 0.85
+        alignment = "alphabetic"
         # Stroke first
         dwg.add(dwg.text(
             text,
@@ -1095,7 +1087,8 @@ def add_center_text(dwg, W: int, H: int, title: str, phrase: str, denom_color: s
             stroke="white",
             stroke_width=STROKE_WIDTH,
             text_anchor="middle",
-            alignment_baseline=baseline,
+            alignment_baseline=alignment,
+            dominant_baseline=alignment,
             opacity=0.5
         ))
         # Fill on top
@@ -1107,12 +1100,13 @@ def add_center_text(dwg, W: int, H: int, title: str, phrase: str, denom_color: s
             fill=fill_color,
             stroke=stroke_color,
             text_anchor="middle",
-            alignment_baseline=baseline,
+            alignment_baseline=alignment,
+            dominant_baseline=alignment,
             opacity=1
         ))
 
     # Title near the top
-    add_text_with_outline(x=(W/2), y=TOP_PADDING, text=title, font_size=int(H*0.12), fill_color="black", stroke_color=denom_color, baseline="hanging", denom_color=denom_color)
+    add_text_with_outline(x=(W/2), y=TOP_PADDING, text=title, font_size=int(H*0.12), fill_color="black", stroke_color=denom_color, baseline="top", denom_color=denom_color)
 
     # Phrase near the bottom
     add_text_with_outline(x=(W/2), y=(H - BOTTOM_PADDING), text=phrase, font_size=int(H*0.08), fill_color="black", stroke_color=denom_color, baseline="baseline", denom_color=denom_color)
@@ -1521,7 +1515,7 @@ def add_rainbow_microseal(
 
     # Default symbol = datetime stamp
     if symbol is None:
-        symbol = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+        symbol = datetime.now().strftime("%Y%m%d%H%M%S")
 
     # ROYGBIV palette
     colors = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#4B0082", "#8B00FF"]
@@ -2440,10 +2434,14 @@ def add_vectorized_background(dwg, W, H, seed_text="", bg_dir="./backgrounds", m
         print(f"[!] Prompt file not found, using default: {background_prompt}")
     
     # Generate background using the prompt
+    target_w = max(1, int(W - 2 * margin))
+    target_h = max(1, int(H - 2 * margin))
+    if target_w != W - 2 * margin or target_h != H - 2 * margin:
+        print(f"[!] Background target size clamped to {target_w}x{target_h} (margin too large).")
     background_path = generate_sd_background(
         prompt=background_prompt,
-        width=W - 2*margin,
-        height=H - 2*margin,
+        width=target_w,
+        height=target_h,
         save_path=bg_dir,
         seed_text=seed_text,
         denomination=denomination
@@ -2461,7 +2459,7 @@ def add_vectorized_background(dwg, W, H, seed_text="", bg_dir="./backgrounds", m
     
     # Continue with the original vectorization logic
     img = Image.open(background_path).convert("RGB")
-    img = img.resize((W - 2*margin, H - 2*margin), Image.LANCZOS)
+    img = img.resize((target_w, target_h), Image.LANCZOS)
     
     # convert to np array
     arr = np.array(img)

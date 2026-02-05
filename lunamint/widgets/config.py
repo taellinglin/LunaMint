@@ -18,6 +18,7 @@ class SDAPIConfig:
     txt2img_path: str = "/sdapi/v1/txt2img"
     progress_path: str = "/sdapi/v1/progress"
     model: Optional[str] = None
+    cfg_scale: Optional[float] = None
     timeout: int = 120
     enable_progress: bool = True
     progress_interval: float = 1.0
@@ -41,7 +42,8 @@ class SDAPIConfig:
 
 def load_sdapi_config() -> SDAPIConfig:
     base_url = os.getenv("SD_API_BASE_URL") or os.getenv("SD_API_URL") or "http://127.0.0.1:7777"
-    model = os.getenv("SD_API_MODEL") or None
+    model = os.getenv("SD_API_MODEL") or "animeTWO.safetensors [44ba85a850]"
+    cfg_scale = float(os.getenv("SD_API_CFG_SCALE", "7"))
     timeout = int(os.getenv("SD_API_TIMEOUT", "120"))
     enable_progress = os.getenv("SD_API_PROGRESS", "true").lower() == "true"
     progress_interval = float(os.getenv("SD_API_PROGRESS_INTERVAL", "1.0"))
@@ -49,6 +51,7 @@ def load_sdapi_config() -> SDAPIConfig:
     return SDAPIConfig(
         base_url=base_url,
         model=model,
+        cfg_scale=cfg_scale,
         timeout=timeout,
         enable_progress=enable_progress,
         progress_interval=progress_interval,
@@ -81,6 +84,9 @@ def sdapi_txt2img(
         override["sd_model_checkpoint"] = cfg.model
         request_payload["override_settings"] = override
         request_payload.setdefault("override_settings_restore_afterwards", True)
+
+    if cfg.cfg_scale is not None and "cfg_scale" not in request_payload:
+        request_payload["cfg_scale"] = cfg.cfg_scale
 
     stop_event = threading.Event()
     progress_thread = None

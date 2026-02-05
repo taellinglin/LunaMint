@@ -1,0 +1,16 @@
+# Suffix overlay for front banknote (LunaMint EisenScript)
+# Jinja2 variables: {{ username }}, {{ serial }}, {{ denomination }}, {{ title }}, {{ subtitle }}, {{ timestamp }}, {{ datetime }}, {{ user_id }}
+
+front_corner_denoms denomination={{denomination}} font_family="Daemon Full Working"
+front_corner_decorations denomination={{denomination}} serial_id={{serial}} timestamp_ms={{timestamp}} size=100 padding=64 stroke_width=1
+
+front_center_seal seed_text={{username}} serial_id={{serial}} denomination={{denomination}} center_radius_scale=0.32 small_radius_scale=0.25 text_seal_scale=0.65 secondary_ring_scale=0.88 center_seal_scale=1.2 chinese_font="FengGuangMingRui" english_font="Daemon Full Working" input_image_path=""
+
+front_microprint_seal text=::{{serial}}:: repetitions=16
+
+front_center_text title={{title}} subtitle={{subtitle}} denomination={{denomination}} title_font="FengGuangMingRui" subtitle_font="FengGuangMingRui"
+
+front_aztec url=https://bank.linglin.art/verify/{{ serial }} cx=440 cy=300 scale=3 border=12 rotation=0 border_opacity=0.5 denomination={{ denomination }}
+front_aztec url=https://bank.linglin.art/banknote-viewer/{{ serial }} cx=1160 cy=300 scale=3 border=12 rotation=180 border_opacity=0.5 denomination={{ denomination }}
+
+front_color_qr url=https://bank.linglin.art/verify/{{ serial }} stamp_width=120 stamp_height=120 rows=9 side=both

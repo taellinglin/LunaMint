@@ -28,6 +28,8 @@ from .letter_mosaic import add_letter_mosaic_from_image_mm
 from .letter_border import add_letter_border_mask_mm, LetterBorderOptions
 from .hash_mandala import add_hash_mandala_mm, add_hash_mandala_rect_mm, HashMandalaOptions
 from .midi_dial import add_midi_dial_mm, MidiDialOptions
+from .pixel_art import add_pixel_art_stamp_mm, PixelArtOptions
+from .daemon_security import add_daemon_security_pattern_mm, add_daemon_security_pattern_px
 
 __all__ = [
     "SDAPIConfig",
@@ -69,4 +71,8 @@ __all__ = [
     "HashMandalaOptions",
     "add_midi_dial_mm",
     "MidiDialOptions",
+    "add_pixel_art_stamp_mm",
+    "PixelArtOptions",
+    "add_daemon_security_pattern_mm",
+    "add_daemon_security_pattern_px",
 ]

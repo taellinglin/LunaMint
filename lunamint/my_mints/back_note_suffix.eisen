@@ -1,0 +1,19 @@
+# Suffix overlay for banknote back (LunaMint EisenScript)
+# Jinja2 variables: {{ serial }}, {{ denomination }}, {{ title }}, {{ subtitle }}, {{ datetime }}, {{ denom_exp }}, {{ user_id }}, {{ username }}, {{ denomination_compact_cn }}, {{ denomination_words_cn }}
+
+back_holographic_seals serial_id={{serial}} denomination={{denomination}} radius=160
+back_center_text title={{title}} phrase={{subtitle}} denomination={{denomination}}
+back_corner_denoms denomination={{denomination}}
+back_circular_qr data=2 cx=800 cy=300 inner_radius=0 outer_radius=220 segments=4 opacity=0.5 colors=#D80027,#0052B4,#009E60
+chinese_microprint cx=800 cy=300 radius=60 text=::{{serial}}:: repetitions=16 font_family=FengGuangMingRui font_size=8
+rainbow_microseal cx=800 cy=300 radius=120 symbol=::LKC:: repetitions=32 font_family=Daemon Full Working font_size=8
+
+back_qr_border seed_text={{username}}::{{denomination}}::{{serial}}::{{datetime}}
+back_aztec url=https://bank.linglin.art/verify/{{ serial }} cx=500 cy=300 scale=3 border=12 rotation=0 border_opacity=0.5 denomination={{ denomination }}
+back_aztec url=https://bank.linglin.art/banknote-viewer/{{ serial }} cx=1100 cy=300 scale=3 border=12 rotation=180 border_opacity=0.5 denomination={{ denomination }}
+back_verification_text serial_id={{ serial }}
+back_circular_qr data={{denom_exp}}:::{{user_id}}::{{username}} cx=800 cy=300 inner_radius=0 outer_radius=220 segments=4 opacity=0.5 colors="#FF0000, #00FF00, #0000FF"
+back_center_text title={{denomination_compact_cn}} phrase={{denomination_words_cn}} denomination={{denomination}}
+
+back_corner_denoms denomination={{denomination}}
+back_corner_decorations denomination={{denomination}} timestamp_ms={{datetime}} serial_id={{serial}} size=100 padding=75 stroke_width=1

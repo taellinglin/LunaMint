@@ -1,0 +1,9 @@
+# Prefix overlay for banknote back (LunaMint EisenScript)
+# Jinja2 variables: {{ username }}, {{ serial }}, {{ denomination }}, {{ timestamp }}
+
+back_vectorized_background bg_dir="./backgrounds" margin=0 n_segments=1024 background_prompt="ROYGBIV DMT Cosmic Chinese Space Princess graphic mural deco in the style of studio ghibli calligraphy"
+back_security_background denomination={{denomination}} serial_id={{serial}} margin=48 base_triangle_size=32 hierarchy_levels=4
+back_qr_border seed_text={{username}} serial_id={{serial}}
+back_corner_decorations denomination={{denomination}} serial_id={{serial}} size=100 padding=64 stroke_width=1
+
+daemon_security x_mm=0 y_mm=0 width_mm=160 height_mm=60 text=::{{username}}::{{serial}}::{{timestamp}}:: font="Daemon Full Working" font_size_mm=1.0 spacing_mm=0.1 row_spacing_mm=0.1 letter_scale=0.65 density=2.4 angle_deg=0 opacity=0.35 color_seed="dense" stagger=true hash_algo=sm3

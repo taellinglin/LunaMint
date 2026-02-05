@@ -61,6 +61,44 @@ Example:
 circle 200 200 40 #333333
 ```
 
+### dot
+Draws a 1px-radius dot (for pixel-style drawing).
+
+Parameters:
+- `x` `y` (positional)
+- `fill` (positional, optional; default `#000`)
+
+Example:
+```
+dot 120 80 #FF00FF80
+```
+
+### pix
+Draws a 1x1 pixel square (for pixel-style drawing).
+
+Parameters:
+- `x` `y` (positional)
+- `fill` (positional, optional; default `#000`)
+
+Example:
+```
+pix 120 80 #00FF00AA
+```
+
+### polygon
+Draws a polygon.
+
+Parameters:
+- `points` (key/value; format: "x,y x,y x,y")
+- `fill` (key/value, optional; default `#000`)
+- `stroke` (key/value, optional)
+- `stroke_width` (key/value, optional)
+
+Example:
+```
+polygon points="10,10 100,10 80,80" fill="#3A7AFE" stroke="#111" stroke_width=2
+```
+
 ### line
 Draws a line.
 
@@ -84,6 +122,21 @@ Parameters:
 Example:
 ```
 text 60 80 32 #111111 "LunaMint Banknote"
+```
+
+### group / endgroup
+Groups elements. If a boolean op is provided, shapes inside the group are combined into a single shape.
+
+Parameters:
+- `group` takes a boolean type as positional or `op=...`
+- Supported booleans: `union`, `difference`, `divide`, `intersection`, `punchout`, `subtract`
+
+Example:
+```
+group union
+  circle 200 200 60 #FF000080
+  circle 240 200 60 #00FF0080
+endgroup
 ```
 
 ### text_dial
@@ -126,6 +179,21 @@ Example:
 text_grid x_mm=10 y_mm=10 width_mm=60 height_mm=60 text="LUNAMINT" font="Daemon Full Working" font_size_mm=1.2
 ```
 
+### pixel_art
+Pixel-art stamp from an image (vectorized pixel blocks).
+
+Parameters:
+- `x_mm`, `y_mm`
+- `image` (path to PNG)
+- `pixel_size_mm`
+- `alpha_threshold`
+- `compress` (`true`|`false`)
+
+Example:
+```
+pixel_art x_mm=10 y_mm=10 image="./portraits/logo.png" pixel_size_mm=0.6 compress=true
+```
+
 ### letter_border
 Letter-based border mask.
 
@@ -137,6 +205,18 @@ Parameters:
 - `font_dir`
 - `font_size_mm`
 - `spacing_mm`
+- `inset_mm`
+- `outset_mm`
+- `offset_x_mm`
+- `offset_y_mm`
+- `layout` (`band` | `packed`)
+- `palette` (comma-separated colors)
+- `cycle_mode` (`sequential` | `random` | `encoding`)
+- `cycle_seed`
+- `encoding_algo` (`sha256` | `sha3_256` | `sm3`)
+- `packed_spacing_x_mm`
+- `packed_spacing_y_mm`
+- `packed_glyph_scale`
 - `fill_color`
 - `opacity`
 - `case`
@@ -275,6 +355,16 @@ Filter-specific parameters (used when `filter=glyph_grid`):
 - `glyph_colorize`
 - `glyph_cell_padding_mm`
 - `glyph_dpi`
+
+### sd_background_circle
+SD background clipped to a circle (outside is transparent).
+
+Parameters:
+- Same as `sd_background`, plus:
+- `cx`, `cy`, `r` (circle center + radius in px)
+
+Notes:
+- This is equivalent to `sd_background` with `background_clip=circle` and `background_clip_cx/cy/r`.
 
 ### qr_code
 Black/white QR code renderer.
@@ -516,6 +606,58 @@ Parameters:
 
 These are valid for `sd_background filter=...` and `front_banknote background_filter=...`.
 
+You can layer filters by joining them with `+`, e.g. `filter=vectorize+triangle_mosaic`.
+
+To avoid old layers showing through, use `background_clear=true` (optional `background_clear_color` and `background_clear_opacity`).
+You can also set `background_opacity` to fade the SD background layer.
+
+SDAPI overrides:
+- `sd_model` / `sd_model_name` / `model`
+- `sd_cfg_scale` / `cfg_scale`
+
+### for loops
+EisenScript supports basic `for` blocks with simple math and `$var` substitution.
+
+Example:
+```
+for [i=0; i<16; i++]
+  angle = i * 22.5
+  x = 600 + cos(angle) * 180
+  y = 600 + sin(angle) * 180
+  rainbow_microseal cx=$x cy=$y radius=60 symbol="$" repetitions=192
+```
+
+You can also iterate a list with `for name in ...`:
+```
+for quadrant in 1 2 3 4
+  label = chr(119 + quadrant)
+```
+
+Supported functions: `sin`, `cos`, `tan` (degrees), `sqrt`, `abs`, `min`, `max`, `pow`, `chr`, `if`.
+
+### cutout_circle
+Clips the immediately previous layer to a circle (use after `sd_background` or any drawable op).
+
+Parameters:
+- `cx`, `cy` (center in px)
+- `r` (radius in px)
+- `target` ("last" or "background")
+
+Example:
+```
+sd_background ...
+cutout_circle cx=256 cy=256 r=240
+```
+
+### mask_circle
+Applies a mask to the previous layer. By default, white shows and black hides. Use `invert=true` to flip (white hides).
+
+Parameters:
+- `cx`, `cy` (center in px)
+- `r` (radius in px)
+- `target` ("last" or "background")
+- `invert` (true/false)
+
 ### vectorize
 Vectorizes an SD background into SVG segments.
 
@@ -525,6 +667,35 @@ Parameters:
 - `background_segments`
 - `bg_dir`
 - `seed_text`
+
+### vectorize_sm2_crosshatch
+Vectorizes an SD background and overlays SM2-encoded crosshatching.
+
+Parameters:
+- `background_prompt`
+- `background_margin`
+- `background_segments`
+- `bg_dir`
+- `seed_text`
+- `sm2_private_key` (optional override; falls back to env)
+- `sm2_public_key` (optional override)
+- `crosshatch_spacing` (default 6.0)
+- `crosshatch_stroke_width` (default 0.5)
+- `crosshatch_opacity` (default 0.45)
+- `crosshatch_alpha` (overrides opacity if set)
+- `crosshatch_h` (0-1 hue; omit to derive from signature)
+- `crosshatch_s` (default 0.9)
+- `crosshatch_l` (default 0.65)
+- `crosshatch_v` (default 1.0)
+- `crosshatch_hue_range` (default 0.28)
+- `transparent_threshold` (default 248; skips near-white segments)
+- `outline_stroke` (optional; stroke color for segment outlines)
+- `outline_stroke_width` (default 0.8)
+- `outline_stroke_opacity` (default 1.0)
+- `outline_stroke_linecap` (default "round")
+- `outline_stroke_linejoin` (default "round")
+- `crosshatch_use_mask` (default false; use mask instead of clipPath for compatibility)
+- `crosshatch_flatten` (default false; physically clips hatch lines to segments for laser/plotter tools)
 
 ### glyph_grid
 Glyph grid filter over an SD background.

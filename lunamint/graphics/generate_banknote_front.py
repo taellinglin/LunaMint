@@ -27,7 +27,10 @@ import os
 import time
 import tqdm
 try:
-    from ..filters.vectorize import add_vectorized_background
+    from ..filters.vectorize import (
+        add_vectorized_background,
+        add_vectorized_background_sm2_crosshatch,
+    )
     from ..filters.triangle_mosaic import add_triangle_mosaic_background, TriangleMosaicConfig
     from ..filters.letter_mosaic import add_letter_mosaic_background, LetterMosaicConfig
     from ..filters.glyph_grid import add_glyph_grid_background, GlyphGridConfig
@@ -53,6 +56,7 @@ try:
         add_iris_lines_mm,
         add_microtext_line_mm,
         add_rosette_mm,
+        add_daemon_security_pattern_mm,
         add_security_thread_mm,
         add_serial_panel_mm,
         add_tile_border_mm,
@@ -64,7 +68,10 @@ except ImportError:
     from pathlib import Path
 
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-    from lunamint.filters.vectorize import add_vectorized_background
+    from lunamint.filters.vectorize import (
+        add_vectorized_background,
+        add_vectorized_background_sm2_crosshatch,
+    )
     from lunamint.filters.triangle_mosaic import add_triangle_mosaic_background, TriangleMosaicConfig
     from lunamint.filters.letter_mosaic import add_letter_mosaic_background, LetterMosaicConfig
     from lunamint.filters.glyph_grid import add_glyph_grid_background, GlyphGridConfig
@@ -90,6 +97,7 @@ except ImportError:
         add_iris_lines_mm,
         add_microtext_line_mm,
         add_rosette_mm,
+        add_daemon_security_pattern_mm,
         add_security_thread_mm,
         add_serial_panel_mm,
         add_tile_border_mm,
@@ -902,6 +910,9 @@ def add_center_text(
 
     # Helper to add text with outline
     def add_text_with_outline(x, y, text, font_size, fill_color, stroke_color, baseline, font_family):
+        if baseline == "top":
+            y = y + font_size * 0.75
+        alignment = "alphabetic"
         # Stroke first
         dwg.add(dwg.text(
             text,
@@ -912,7 +923,8 @@ def add_center_text(
             stroke="white",
             stroke_width=STROKE_WIDTH,
             text_anchor="middle",
-            alignment_baseline=baseline,
+            alignment_baseline=alignment,
+            dominant_baseline=alignment,
             opacity=0.5
         ))
         # Fill on top
@@ -924,12 +936,13 @@ def add_center_text(
             fill=fill_color,
             stroke=stroke_color,
             text_anchor="middle",
-            alignment_baseline=baseline,
+            alignment_baseline=alignment,
+            dominant_baseline=alignment,
             opacity=1
         ))
 
     # Title near the top
-    add_text_with_outline(x=(W/2), y=TOP_PADDING, text=title, font_size=int(H*0.12), fill_color="black", stroke_color=denom_color, baseline="hanging", font_family=title_font)
+    add_text_with_outline(x=(W/2), y=TOP_PADDING, text=title, font_size=int(H*0.12), fill_color="black", stroke_color=denom_color, baseline="top", font_family=title_font)
 
     # Phrase near the bottom
     add_text_with_outline(x=(W/2), y=(H - BOTTOM_PADDING), text=phrase, font_size=int(H*0.08), fill_color="black", stroke_color=denom_color, baseline="baseline", font_family=phrase_font)
@@ -968,20 +981,22 @@ def denomination_color(denom: int) -> str:
     """
     # Clamp between 1 and 100,000,000
     denom = max(1, min(100_000_000, denom))
-
-    # Normalize exponent (log10 scale)
-    exp = math.log10(denom) / math.log10(100_000_000)  # 0.0 → 1.0
-
-    # ROYGBIV palette
-    roygbiv = [
-        (255, 0, 0),       # Red
-        (255, 165, 0),     # Orange
-        (255, 255, 0),     # Yellow
-        (0, 128, 0),       # Green
-        (0, 0, 255),       # Blue
-        (75, 0, 130),      # Indigo
-        (143, 0, 255)      # Violet
+    """
+    Returns a ROYGBIV color from a fixed palette based on the denomination.
+    """
+    palette = [
+        "#FF0000",  # Red
+        "#FF7F00",  # Orange
+        "#FFFF00",  # Yellow
+        "#00FF00",  # Green
+        "#0000FF",  # Blue
+        "#4B0082",  # Indigo
+        "#8B00FF",  # Violet
     ]
+    denom = max(1, int(denom))
+    idx = int(math.log10(denom)) if denom > 0 else 0
+    idx = max(0, min(idx, len(palette) - 1))
+    return palette[idx]
 
     # Find segment in ROYGBIV
     idx = int(exp * (len(roygbiv) - 1))
@@ -1213,6 +1228,25 @@ def generate_fantasy_banknote(seed_text: str, input_image_path: str, outfile_svg
                 denomination=denomination,
                 config=TriangleMosaicConfig(),
             )
+        elif filter_name in {
+            "vectorize_sm2",
+            "sm2_vectorize",
+            "vectorize_sm2_crosshatch",
+            "sm2_crosshatch",
+            "crosshatch_sm2",
+            "vectorize_crosshatch",
+        }:
+            add_vectorized_background_sm2_crosshatch(
+                dwg=dwg,
+                W=W,
+                H=H,
+                seed_text=seed_text,
+                bg_dir=bg_dir,
+                margin=background_margin,
+                n_segments=background_segments,
+                background_prompt=background_prompt,
+                denomination=denomination,
+            )
         else:
             add_vectorized_background(
                 dwg=dwg,
@@ -1225,6 +1259,26 @@ def generate_fantasy_banknote(seed_text: str, input_image_path: str, outfile_svg
                 background_prompt=background_prompt,
                 denomination=denomination,
             )
+
+        add_daemon_security_pattern_mm(
+            dwg,
+            x_mm=0,
+            y_mm=0,
+            width_mm=width_mm,
+            height_mm=height_mm,
+            text=f"{seed_text}-{serial_id}",
+            font_name="Daemon Full Working",
+            font_size_mm=0.9,
+            spacing_mm=0.15,
+            row_spacing_mm=0.15,
+            angle_deg=0.0,
+            opacity=0.26,
+            color_seed=f"{seed_text}-{serial_id}",
+            stagger=True,
+            density=2.2,
+            letter_scale=0.7,
+            hash_algo="sha256",
+        )
     
     if progress_callback:
         progress_callback("Adding microgrid and border")
@@ -1585,6 +1639,9 @@ def add_corner_denoms(dwg, W: int, H: int, denom_str: str, font_family: str = "D
 
     # Helper to add text with stroke behind
     def add_text_with_outline(x, y, text, font_size, color, anchor, baseline):
+        if baseline == "top":
+            y = y + font_size * 0.75
+        alignment = "alphabetic"
         # Stroke first
         dwg.add(dwg.text(
             text,
@@ -1595,7 +1652,8 @@ def add_corner_denoms(dwg, W: int, H: int, denom_str: str, font_family: str = "D
             stroke="#FFF",
             stroke_width=STROKE_WIDTH,
             text_anchor=anchor,
-            alignment_baseline=baseline,
+            alignment_baseline=alignment,
+            dominant_baseline=alignment,
             opacity=0.9
         ))
         # Fill on top
@@ -1607,19 +1665,20 @@ def add_corner_denoms(dwg, W: int, H: int, denom_str: str, font_family: str = "D
             fill=color,
             stroke="none",
             text_anchor=anchor,
-            alignment_baseline=baseline,
+            alignment_baseline=alignment,
+            dominant_baseline=alignment,
             opacity=0.9
         ))
 
     # --- Top-left ---
-    add_text_with_outline(PADDING, PADDING, first_digit, BIG_FONT, COLORS[0], "start", "hanging")
+    add_text_with_outline(PADDING, PADDING, first_digit, BIG_FONT, COLORS[0], "start", "top")
     offset_x = PADDING + BIG_FONT * 0.6
-    add_text_with_outline(offset_x, PADDING, rest_digits, SMALL_FONT, COLORS[0], "start", "hanging")
+    add_text_with_outline(offset_x, PADDING, rest_digits, SMALL_FONT, COLORS[0], "start", "top")
 
     # --- Top-right ---
-    add_text_with_outline(W - PADDING, PADDING, rest_digits, SMALL_FONT, COLORS[1], "end", "hanging")
+    add_text_with_outline(W - PADDING, PADDING, rest_digits, SMALL_FONT, COLORS[1], "end", "top")
     offset_x = W - PADDING - SMALL_FONT * len(rest_digits) * 0.55
-    add_text_with_outline(offset_x, PADDING, first_digit, BIG_FONT, COLORS[1], "end", "hanging")
+    add_text_with_outline(offset_x, PADDING, first_digit, BIG_FONT, COLORS[1], "end", "top")
 
     # --- Bottom-left ---
     add_text_with_outline(PADDING, H - PADDING, first_digit, BIG_FONT, COLORS[2], "start", "baseline")

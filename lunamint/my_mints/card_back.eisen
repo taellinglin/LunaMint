@@ -1,0 +1,25 @@
+# Credit card back
+size 1000 630
+background #0b0f18
+
+# Base card
+rect 40 40 920 550 #111826
+rect 60 60 880 510 #0f1624
+
+# Mag stripe
+rect 60 110 880 90 #0a0a0a
+
+# Signature + CVV
+rect 60 240 700 60 #e6e6e6
+rect 770 240 170 60 #cfd6e6
+text 790 278 20 #111111 "123"
+
+# Legal text
+text 60 330 14 #a9b3c7 "AUTHORIZED SIGNATURE"
+text 60 360 12 #7f8aa3 "If found, please contact LUNAMINT Treasury"
+
+# Back QR
+qr_code x=760 y=350 size=160 data="https://linglin.art" border=2 error=Q foreground="#111111" background="#ffffff" invert=false
+
+# Subtle seal
+hash_mandala cx_mm=40 cy_mm=80 radius_mm=10 data="LUNAMINT" font=Daemon Full Working font_size_mm=0.9 charset="LUNAMINT" rings=4 sectors=8 opacity=0.4 stroke_width_mm=0.08 colorize=false

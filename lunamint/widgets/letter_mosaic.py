@@ -70,6 +70,11 @@ def add_letter_mosaic_from_image_mm(
     cell_w = max(1.0, (x_max - x_min) * scale)
     cell_h = max(1.0, (y_max - y_min) * scale)
 
+    effective_snap = snap_grid_px
+    if effective_snap > 0:
+        max_snap = max(1.0, min(cell_w, cell_h) * 0.5)
+        effective_snap = min(effective_snap, max_snap)
+
     cols = max(1, int(width / cell_w))
     rows = max(1, int(height / cell_h))
     img = img.resize((cols, rows))
@@ -100,9 +105,9 @@ def add_letter_mosaic_from_image_mm(
                 for i in range(0, len(coords) - 1, 2):
                     px = x + c * cell_w + coords[i] * scale
                     py = y + (r + 1) * cell_h - coords[i + 1] * scale
-                    if snap_grid_px > 0:
-                        px = snap_px(px, snap_grid_px)
-                        py = snap_px(py, snap_grid_px)
+                    if effective_snap > 0:
+                        px = snap_px(px, effective_snap)
+                        py = snap_px(py, effective_snap)
                     new_coords.extend([px, py])
                 parsed.append((cmd, new_coords))
             group.add(dwg.path(d=_format_path(parsed), fill="#111111", stroke="none"))

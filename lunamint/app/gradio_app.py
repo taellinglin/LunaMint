@@ -18,6 +18,27 @@ import gradio as gr
 from lunamint.scripting import render_script_to_svg_html
 
 
+MINTS_DIR = Path(__file__).resolve().parents[1] / "my_mints"
+
+
+def _list_mint_scripts() -> List[str]:
+  if not MINTS_DIR.exists():
+    return []
+  scripts = sorted(p.relative_to(MINTS_DIR).as_posix() for p in MINTS_DIR.rglob("*.eisen"))
+  return scripts
+
+
+def _load_mint_script(relative_path: str) -> str:
+  if not relative_path:
+    return ""
+  target = (MINTS_DIR / relative_path).resolve()
+  if MINTS_DIR not in target.parents and target != MINTS_DIR:
+    raise gr.Error("Invalid script path")
+  if not target.exists():
+    raise gr.Error("Script not found")
+  return target.read_text(encoding="utf-8")
+
+
 WIDGET_DEFAULTS: Dict[str, Dict[str, Any]] = {
   "sd_background": {
     "seed_text": "LunaMint",
@@ -68,6 +89,27 @@ WIDGET_DEFAULTS: Dict[str, Dict[str, Any]] = {
     "colorize": "true",
     "use_roygbiv": "true",
   },
+  "daemon_security": {
+    "x_mm": "0",
+    "y_mm": "0",
+    "width_mm": "160",
+    "height_mm": "60",
+    "text": "LUNAMINT",
+    "font": "Daemon Full Working",
+    "font_size_mm": "1.2",
+    "spacing_mm": "0.6",
+    "row_spacing_mm": "0.6",
+    "angle_deg": "0",
+    "opacity": "0.35",
+    "color_seed": "",
+    "stagger": "true",
+    "density": "1.0",
+    "letter_scale": "1.0",
+    "hash_algo": "sha256",
+    "sm2_private_key": "",
+    "sm2_public_key": "",
+    "sm4_key": "",
+  },
   "text": {
     "x": "100",
     "y": "100",
@@ -95,6 +137,8 @@ WIDGET_DEFAULTS: Dict[str, Dict[str, Any]] = {
   },
   "back_corner_denoms": {
     "denomination": "100",
+    "big_scale": "1.0",
+    "small_scale": "1.0",
   },
   "back_corner_decorations": {
     "denomination": "100",
@@ -183,11 +227,29 @@ WIDGET_DEFAULTS: Dict[str, Dict[str, Any]] = {
     "h": "100",
     "fill": "#111111",
   },
+  "dot": {
+    "x": "0",
+    "y": "0",
+    "fill": "#111111",
+  },
+  "pix": {
+    "x": "0",
+    "y": "0",
+    "fill": "#111111",
+  },
   "circle": {
     "x": "80",
     "y": "80",
     "r": "40",
     "fill": "#111111",
+  },
+  "pixel_art": {
+    "x_mm": "10",
+    "y_mm": "10",
+    "image": "portraits/portrait_Ling_Treasury.png",
+    "pixel_size_mm": "0.6",
+    "alpha_threshold": "0.05",
+    "compress": "true",
   },
   "text_dial": {
     "cx_mm": "80",
@@ -216,6 +278,18 @@ WIDGET_DEFAULTS: Dict[str, Dict[str, Any]] = {
     "text": "LUNAMINT",
     "font": "Daemon Full Working",
     "font_size_mm": "1.2",
+    "inset_mm": "0.0",
+    "outset_mm": "0.0",
+    "offset_x_mm": "0.0",
+    "offset_y_mm": "0.0",
+    "layout": "band",
+    "palette": "",
+    "cycle_mode": "sequential",
+    "cycle_seed": "",
+    "encoding_algo": "sha3_256",
+    "packed_spacing_x_mm": "",
+    "packed_spacing_y_mm": "",
+    "packed_glyph_scale": "1.0",
     "fill_color": "#111111",
     "opacity": "1.0",
   },
@@ -251,6 +325,14 @@ def _props_to_lines(widget_type: str, props: Dict[str, Any]) -> List[str]:
   if widget_type == "rect":
     return [
       f"rect {props.get('x', '0')} {props.get('y', '0')} {props.get('w', '10')} {props.get('h', '10')} {props.get('fill', '#000')}".rstrip()
+    ]
+  if widget_type == "dot":
+    return [
+      f"dot {props.get('x', '0')} {props.get('y', '0')} {props.get('fill', '#000')}".rstrip()
+    ]
+  if widget_type == "pix":
+    return [
+      f"pix {props.get('x', '0')} {props.get('y', '0')} {props.get('fill', '#000')}".rstrip()
     ]
   if widget_type == "circle":
     return [
@@ -354,8 +436,23 @@ def _generate(script: str, export_png: bool, sd_api_url: str | None):
   return preview_html, str(svg_path), str(png_path) if png_path else None
 
 
+ROYGBIV_SYNTAX_CSS = """
+.cm-editor { background: #0b0b0b; color: #f2f2f2; }
+.cm-content { caret-color: #ffffff; }
+.cm-line { font-family: "Consolas", "Fira Code", monospace; }
+.cm-gutters { background: #0b0b0b; color: #666; border-right: 1px solid #222; }
+.cm-keyword { color: #FF0000; }   /* red */
+.cm-operator { color: #FF7F00; }  /* orange */
+.cm-number { color: #FFFF00; }    /* yellow */
+.cm-string { color: #00FF00; }    /* green */
+.cm-variableName { color: #0000FF; } /* blue */
+.cm-comment { color: #4B0082; }   /* indigo */
+.cm-builtin, .cm-def { color: #8B00FF; } /* violet */
+"""
+
+
 def build_ui():
-    with gr.Blocks(title="Banknote Generator") as demo:
+  with gr.Blocks(title="Banknote Generator") as demo:
         gr.Markdown("# Banknote Generator\nGenerate front/back SVG+PNG using lunamint.")
 
         with gr.Tab("Editor"):
@@ -368,12 +465,22 @@ def build_ui():
 
             with gr.Row():
                 with gr.Column(scale=1, min_width=320):
-                    gr.Markdown("### Eisen Widgets")
+                  with gr.Accordion("Navigator", open=True):
+                    gr.Markdown("### Eisen Settings")
                     sd_api_url = gr.Textbox(
                         label="SD API URL",
                         placeholder="http://127.0.0.1:7777",
                         value=os.getenv("SD_API_BASE_URL", ""),
                     )
+                    gr.Markdown("### My Mints")
+                    mint_scripts = gr.Dropdown(
+                      label="Eisen files",
+                      choices=_list_mint_scripts(),
+                      value=None,
+                    )
+                  with gr.Row():
+                    load_mint_btn = gr.Button("Load")
+                    refresh_mint_btn = gr.Button("Refresh")
                     widget_type = gr.Dropdown(
                         label="Add widget",
                         choices=sorted(WIDGET_DEFAULTS.keys()),
@@ -409,11 +516,12 @@ def build_ui():
                           df.change(_on_change, inputs=[df, elements_state], outputs=elements_state)
 
                 with gr.Column(scale=2):
-                    script_editor = gr.Textbox(
-                        label="EisenScript",
-                        value=default_script,
-                        lines=20,
-                    )
+                  script_editor = gr.Code(
+                    label="EisenScript",
+                    value=default_script,
+                    language="markdown",
+                    lines=20,
+                  )
 
             def _on_add(elements, widget_choice, after_choice):
               updated = _add_widget(elements, widget_choice, after_choice)
@@ -431,6 +539,16 @@ def build_ui():
               _on_add,
               inputs=[elements_state, widget_type, insert_after],
               outputs=[elements_state, insert_after],
+            )
+            load_mint_btn.click(
+              _load_mint_script,
+              inputs=[mint_scripts],
+              outputs=[script_editor],
+            )
+            refresh_mint_btn.click(
+              lambda: gr.Dropdown(choices=_list_mint_scripts()),
+              inputs=[],
+              outputs=[mint_scripts],
             )
             apply_btn.click(
               _on_apply,
@@ -466,9 +584,9 @@ def build_ui():
           outputs=[preview_panel, svg_file, png_file],
         )
 
-    return demo
+        return demo
 
 
 if __name__ == "__main__":
-    app = build_ui()
-    app.launch()
+  app = build_ui()
+  app.launch(css=ROYGBIV_SYNTAX_CSS)
