@@ -25,6 +25,9 @@ gradio = ["gradio>=4.0.0"]
 Homepage = "https://bank.linglin.art"
 Repository = "https://bank.linglin.art"
 
+[project.scripts]
+lunamint = "lunamint.cli.main:main"
+
 [tool.setuptools]
 
 [tool.setuptools.packages.find]
